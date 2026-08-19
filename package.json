@@ -1,0 +1,47 @@
+{
+  "name": "equity-labs",
+  "version": "1.0.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "dev": "expo start --web",
+    "web": "expo start --web",
+    "ios": "expo start --ios",
+    "android": "expo start --android",
+    "agent": "python3.11 -m uvicorn service.main:app --port 8000",
+    "agent:dev": "python3.11 -m uvicorn service.main:app --port 8000 --reload",
+    "agent:stub": "RESEARCH_STUB=1 python3.11 -m uvicorn service.main:app --port 8000",
+    "build:web": "expo export --platform web --output-dir dist",
+    "serve": "node server/index.js",
+    "prod": "npm run build:web && npm run serve"
+  },
+  "dependencies": {
+    "@expo-google-fonts/dm-mono": "^0.4.2",
+    "@expo-google-fonts/dm-sans": "^0.4.2",
+    "@expo-google-fonts/fraunces": "^0.4.1",
+    "@expo/metro-runtime": "~57.0.7",
+    "expo": "^57.0.8",
+    "expo-constants": "~57.0.7",
+    "expo-font": "~57.0.1",
+    "expo-linking": "~57.0.4",
+    "expo-router": "~57.0.8",
+    "expo-splash-screen": "~57.0.5",
+    "expo-status-bar": "~57.0.1",
+    "express": "^4.22.2",
+    "nativewind": "^4.2.6",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-native": "^0.86.2",
+    "react-native-reanimated": "4.5.0",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-svg": "15.15.4",
+    "react-native-web": "^0.21.2",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "typescript": "~5.9"
+  }
+}

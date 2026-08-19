@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equity Labs — Cap table math, settled before the round closes</title>
+<meta name="description" content="Equity Labs turns signed documents into a cap table, a waterfall, and a distribution every stakeholder can audit. Three steps from term sheet to statement.">
+<meta name="theme-color" content="#FFF2F2">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Equity Labs — Cap table math, settled before the round closes">
+<meta property="og:description" content="Three steps from a signed term sheet to a distribution every stakeholder can audit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Equity Labs</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">How it works</a>
+      <a href="about.html">About us</a>
+      <a href="feature.html">Feature</a>
+    </nav>
+
+    <a class="btn" href="#request">Request access</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap hero">
+    <span class="eyebrow">How it works</span>
+    <h1 class="display hero__title">Cap table math, settled before the round closes.</h1>
+    <p class="lede hero__lede">Three steps from a signed term sheet to a distribution every stakeholder can audit.</p>
+    <div class="hero__actions">
+      <a class="btn" href="#model">See the model <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost" href="feature.html">Scenario modeling</a>
+    </div>
+  </section>
+
+  <section class="section--surface" aria-label="The three steps">
+    <div class="wrap">
+      <div class="steps">
+        <article class="step reveal">
+          <span class="step__n" aria-hidden="true">01</span>
+          <h2 class="h3">Connect the documents</h2>
+          <p>Term sheets, SAFEs, and option grants come in as-is. We parse the terms that move the waterfall — liquidation preference, participation, seniority, conversion.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step__n" aria-hidden="true">02</span>
+          <h2 class="h3">Reconcile ownership</h2>
+          <p>Every share class is checked against the source document, and conflicts surface before they compound. Nothing is carried forward on trust.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step__n" aria-hidden="true">03</span>
+          <h2 class="h3">Model and distribute</h2>
+          <p>Run exit scenarios, then publish a statement each holder can open and verify themselves — down to the clause it came from.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="model">
+    <div class="split split--sidebar">
+      <div>
+        <h2 class="h2">Inside the model</h2>
+        <p class="prose" style="margin-top:18px">Every waterfall is versioned, diffable, and traceable back to the document it came from. Change one term and the distribution recalculates in front of you — with the prior version still on record.</p>
+        <a class="btn btn--ghost" href="feature.html" style="margin-top:26px">Explore scenarios <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+
+      <div style="display:grid;gap:24px">
+        <figure class="figure reveal">
+          <figcaption class="figure__head">
+            <div class="figure__title">Distribution by holder — $180M exit</div>
+            <p class="figure__sub">Illustrative waterfall for a Series B company. Proceeds after a $120M preference stack clears.</p>
+          </figcaption>
+
+          <div class="figure__body">
+            <svg class="chart" viewBox="0 0 720 320" role="img"
+                 aria-label="Column chart of distribution by holder at a 180 million dollar exit. Series B preferred receives 52.0 million, the largest share; common receives 48.2 million; Series A preferred 34.5 million; seed 21.8 million; option pool 17.4 million; advisors 6.1 million.">
+
+              <!-- gridlines -->
+              <line class="grid-line" x1="56" y1="268" x2="700" y2="268"></line>
+              <line class="grid-line" x1="56" y1="205" x2="700" y2="205"></line>
+              <line class="grid-line" x1="56" y1="142" x2="700" y2="142"></line>
+              <line class="grid-line" x1="56" y1="79"  x2="700" y2="79"></line>
+              <line class="grid-line" x1="56" y1="16"  x2="700" y2="16"></line>
+
+              <!-- y axis -->
+              <text class="axis-label" x="44" y="272" text-anchor="end">$0</text>
+              <text class="axis-label" x="44" y="209" text-anchor="end">$15M</text>
+              <text class="axis-label" x="44" y="146" text-anchor="end">$30M</text>
+              <text class="axis-label" x="44" y="83"  text-anchor="end">$45M</text>
+              <text class="axis-label" x="44" y="20"  text-anchor="end">$60M</text>
+
+              <!-- columns: 24px wide, 4px rounded cap, square at baseline -->
+              <path class="bar" d="M98,53.6 q0,-4 4,-4 h16 q4,0 4,4 V268 H98 Z"></path>
+              <path class="bar" d="M205,127.1 q0,-4 4,-4 h16 q4,0 4,4 V268 H205 Z"></path>
+              <path class="bar" d="M312,180.4 q0,-4 4,-4 h16 q4,0 4,4 V268 H312 Z"></path>
+              <path class="bar" d="M420,69.6 q0,-4 4,-4 h16 q4,0 4,4 V268 H420 Z"></path>
+              <path class="bar" d="M527,198.9 q0,-4 4,-4 h16 q4,0 4,4 V268 H527 Z"></path>
+              <path class="bar" d="M634,246.4 q0,-4 4,-4 h16 q4,0 4,4 V268 H634 Z"></path>
+
+              <!-- single direct label on the extreme -->
+              <text class="direct-label" x="110" y="40" text-anchor="middle">$52.0M</text>
+
+              <!-- x axis -->
+              <text class="axis-label" x="110" y="292" text-anchor="middle">Series B</text>
+              <text class="axis-label" x="217" y="292" text-anchor="middle">Series A</text>
+              <text class="axis-label" x="324" y="292" text-anchor="middle">Seed</text>
+              <text class="axis-label" x="432" y="292" text-anchor="middle">Common</text>
+              <text class="axis-label" x="539" y="292" text-anchor="middle">Options</text>
+              <text class="axis-label" x="646" y="292" text-anchor="middle">Advisors</text>
+
+              <!-- hover targets, wider than the marks -->
+              <rect class="bar-hit" x="70"  y="16" width="80" height="252" data-mark="0" data-px="110" data-py="49.6"  data-tip-key="Series B preferred" data-tip-val="$52.0M · 28.9%"></rect>
+              <rect class="bar-hit" x="177" y="16" width="80" height="252" data-mark="1" data-px="217" data-py="123.1" data-tip-key="Series A preferred" data-tip-val="$34.5M · 19.2%"></rect>
+              <rect class="bar-hit" x="284" y="16" width="80" height="252" data-mark="2" data-px="324" data-py="176.4" data-tip-key="Seed preferred"     data-tip-val="$21.8M · 12.1%"></rect>
+              <rect class="bar-hit" x="392" y="16" width="80" height="252" data-mark="3" data-px="432" data-py="65.6"  data-tip-key="Common"             data-tip-val="$48.2M · 26.8%"></rect>
+              <rect class="bar-hit" x="499" y="16" width="80" height="252" data-mark="4" data-px="539" data-py="194.9" data-tip-key="Option pool"        data-tip-val="$17.4M · 9.7%"></rect>
+              <rect class="bar-hit" x="606" y="16" width="80" height="252" data-mark="5" data-px="646" data-py="242.4" data-tip-key="Advisors"           data-tip-val="$6.1M · 3.4%"></rect>
+            </svg>
+          </div>
+
+          <div class="figure__foot">
+            <details class="data-toggle">
+              <summary>View data</summary>
+              <div class="table-scroll">
+                <table class="data">
+                  <caption class="visually-hidden">Distribution by holder at a $180M exit</caption>
+                  <thead>
+                    <tr><th scope="col">Holder</th><th scope="col" class="num">Proceeds</th><th scope="col" class="num">Share</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Series B preferred</td><td class="num">$52.0M</td><td class="num">28.9%</td></tr>
+                    <tr><td>Series A preferred</td><td class="num">$34.5M</td><td class="num">19.2%</td></tr>
+                    <tr><td>Seed preferred</td><td class="num">$21.8M</td><td class="num">12.1%</td></tr>
+                    <tr><td>Common</td><td class="num">$48.2M</td><td class="num">26.8%</td></tr>
+                    <tr><td>Option pool</td><td class="num">$17.4M</td><td class="num">9.7%</td></tr>
+                    <tr><td>Advisors</td><td class="num">$6.1M</td><td class="num">3.4%</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="num"><strong>$180.0M</strong></td><td class="num"><strong>100%</strong></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </figure>
+
+        <figure class="figure reveal">
+          <figcaption class="figure__head">
+            <div class="figure__title">Fully diluted ownership</div>
+            <p class="figure__sub">As reconciled from 14 source documents · last verified 12 Jun 2026</p>
+          </figcaption>
+          <div class="figure__body" style="padding:22px 28px 24px;overflow-x:auto">
+            <table class="ledger">
+              <caption class="visually-hidden">Fully diluted ownership by share class</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Share class</th>
+                  <th scope="col" class="ledger__bar">Fully diluted</th>
+                  <th scope="col" class="num">Shares</th>
+                  <th scope="col" class="num">%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="holder">Common</span><br><span class="meta">founders + employees</span></td>
+                  <td class="ledger__bar"><span class="ledger__track"><span class="ledger__fill" style="width:38.4%"></span></span></td>
+                  <td class="num">14,208,400</td>
+                  <td class="num">38.4%</td>
+                </tr>
+                <tr>
+                  <td><span class="holder">Series B</span><br><span class="meta">1× non-participating</span></td>
+                  <td class="ledger__bar"><span class="ledger__track"><span class="ledger__fill" style="width:22.1%"></span></span></td>
+                  <td class="num">8,177,000</td>
+                  <td class="num">22.1%</td>
+                </tr>
+                <tr>
+                  <td><span class="holder">Series A</span><br><span class="meta">1× non-participating</span></td>
+                  <td class="ledger__bar"><span class="ledger__track"><span class="ledger__fill" style="width:16.9%"></span></span></td>
+                  <td class="num">6,253,300</td>
+                  <td class="num">16.9%</td>
+                </tr>
+                <tr>
+                  <td><span class="holder">Seed</span><br><span class="meta">converted SAFEs</span></td>
+                  <td class="ledger__bar"><span class="ledger__track"><span class="ledger__fill" style="width:11.4%"></span></span></td>
+                  <td class="num">4,218,900</td>
+                  <td class="num">11.4%</td>
+                </tr>
+                <tr>
+                  <td><span class="holder">Option pool</span><br><span class="meta">granted + available</span></td>
+                  <td class="ledger__bar"><span class="ledger__track"><span class="ledger__fill" style="width:11.2%"></span></span></td>
+                  <td class="num">4,144,400</td>
+                  <td class="num">11.2%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--bordered">
+    <div class="wrap section--tight" style="padding-inline:var(--gutter)">
+      <div class="stats">
+        <div class="stat reveal"><span class="stat__value">$4.2B</span><span class="stat__label">Equity under management</span></div>
+        <div class="stat reveal"><span class="stat__value">1,900</span><span class="stat__label">Cap tables reconciled</span></div>
+        <div class="stat reveal"><span class="stat__value">11 days</span><span class="stat__label">Average close time saved</span></div>
+        <div class="stat reveal"><span class="stat__value">SOC 2</span><span class="stat__label">Type II certified</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="request">
+    <div class="cta reveal">
+      <div>
+        <h2 class="h2 cta__title">Close the round on numbers that agree.</h2>
+        <p>We onboard a handful of funds and operating companies each quarter, starting with a read-only reconciliation of your current cap table.</p>
+      </div>
+      <a class="btn" href="mailto:access@equitylabs.example?subject=Request%20access">Request access <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <small>© <span data-year>2026</span> Equity Labs</small>
+    <nav aria-label="Footer">
+      <a href="#">Security</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

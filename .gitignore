@@ -1,0 +1,13 @@
+node_modules/
+__pycache__/
+*.pyc
+dist/
+.expo/
+web-build/
+expo-env.d.ts
+
+# Waitlist submissions captured by the Express server
+server/access-requests.jsonl
+
+.DS_Store
+*.log

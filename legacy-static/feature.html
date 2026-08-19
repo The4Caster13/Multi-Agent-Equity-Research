@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scenario modeling — Equity Labs</title>
+<meta name="description" content="Move one term and watch every holder's outcome move with it. Scenario modeling in Equity Labs is versioned, diffable, and traceable to the source document.">
+<meta name="theme-color" content="#FFF2F2">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scenario modeling — Equity Labs">
+<meta property="og:description" content="Move one term and watch every holder's outcome move with it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Equity Labs</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="index.html">How it works</a>
+      <a href="about.html">About us</a>
+      <a href="feature.html" aria-current="page">Feature</a>
+    </nav>
+
+    <a class="btn" href="index.html#request">Request access</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap hero" style="padding-bottom:clamp(40px,5vw,64px)">
+    <span class="eyebrow">Feature</span>
+    <h1 class="display display--sm">Scenario modeling</h1>
+    <p class="lede hero__lede">Move one term and watch every holder's outcome move with it — with the version you started from still on record.</p>
+  </section>
+
+  <section class="wrap" style="padding-bottom:clamp(56px,7vw,88px)">
+    <figure class="figure reveal">
+      <figcaption class="figure__head">
+        <div class="figure__title">Common payout across exit values</div>
+        <p class="figure__sub">Same cap table, exit value swept from $0 to $400M. Common sees nothing until the $120M preference stack clears, then takes 57 cents of every additional dollar.</p>
+      </figcaption>
+
+      <div class="figure__body">
+        <svg class="chart" viewBox="0 0 720 320" role="img"
+             aria-label="Line chart of proceeds to common against exit value. Common receives nothing below a 120 million dollar exit, where the liquidation preference stack clears. Above that point the payout rises linearly, reaching 159.6 million dollars at a 400 million dollar exit.">
+
+          <!-- gridlines -->
+          <line class="grid-line" x1="64" y1="268" x2="684" y2="268"></line>
+          <line class="grid-line" x1="64" y1="205" x2="684" y2="205"></line>
+          <line class="grid-line" x1="64" y1="142" x2="684" y2="142"></line>
+          <line class="grid-line" x1="64" y1="79"  x2="684" y2="79"></line>
+          <line class="grid-line" x1="64" y1="16"  x2="684" y2="16"></line>
+
+          <!-- y axis -->
+          <text class="axis-label" x="52" y="272" text-anchor="end">$0</text>
+          <text class="axis-label" x="52" y="209" text-anchor="end">$45M</text>
+          <text class="axis-label" x="52" y="146" text-anchor="end">$90M</text>
+          <text class="axis-label" x="52" y="83"  text-anchor="end">$135M</text>
+          <text class="axis-label" x="52" y="20"  text-anchor="end">$180M</text>
+
+          <!-- preference-stack marker -->
+          <line class="marker-line" x1="250" y1="268" x2="250" y2="104"></line>
+          <text class="direct-label--soft" x="258" y="108">preference stack clears · $120M</text>
+
+          <!-- area wash + line -->
+          <path class="series-area" d="M64,268 L250,268 L296.5,244.06 L374,204.16 L451.5,164.26 L529,124.36 L606.5,84.46 L684,44.56 L684,268 Z"></path>
+          <path class="series-line" d="M64,268 L250,268 L296.5,244.06 L374,204.16 L451.5,164.26 L529,124.36 L606.5,84.46 L684,44.56"></path>
+
+          <!-- crosshair, revealed on hover -->
+          <line class="crosshair marker-line" x1="0" y1="16" x2="0" y2="268" style="opacity:0"></line>
+
+          <!-- endpoint marker + direct label -->
+          <circle class="end-dot" cx="684" cy="44.56" r="4.5"></circle>
+          <text class="direct-label" x="676" y="30" text-anchor="end">$159.6M</text>
+
+          <!-- x axis -->
+          <text class="axis-label" x="64"  y="292" text-anchor="middle">$0</text>
+          <text class="axis-label" x="219" y="292" text-anchor="middle">$100M</text>
+          <text class="axis-label" x="374" y="292" text-anchor="middle">$200M</text>
+          <text class="axis-label" x="529" y="292" text-anchor="middle">$300M</text>
+          <text class="axis-label" x="684" y="292" text-anchor="middle">$400M</text>
+          <text class="axis-label" x="374" y="314" text-anchor="middle">exit value</text>
+
+          <!-- hover bands -->
+          <rect class="bar-hit" x="25.25"  y="16" width="77.5" height="252" data-px="64"    data-py="268"    data-tip-key="$0M exit"   data-tip-val="Common: $0"></rect>
+          <rect class="bar-hit" x="102.75" y="16" width="77.5" height="252" data-px="141.5" data-py="268"    data-tip-key="$50M exit"  data-tip-val="Common: $0"></rect>
+          <rect class="bar-hit" x="180.25" y="16" width="77.5" height="252" data-px="219"   data-py="268"    data-tip-key="$100M exit" data-tip-val="Common: $0"></rect>
+          <rect class="bar-hit" x="257.75" y="16" width="77.5" height="252" data-px="296.5" data-py="244.06" data-tip-key="$150M exit" data-tip-val="Common: $17.1M"></rect>
+          <rect class="bar-hit" x="335.25" y="16" width="77.5" height="252" data-px="374"   data-py="204.16" data-tip-key="$200M exit" data-tip-val="Common: $45.6M"></rect>
+          <rect class="bar-hit" x="412.75" y="16" width="77.5" height="252" data-px="451.5" data-py="164.26" data-tip-key="$250M exit" data-tip-val="Common: $74.1M"></rect>
+          <rect class="bar-hit" x="490.25" y="16" width="77.5" height="252" data-px="529"   data-py="124.36" data-tip-key="$300M exit" data-tip-val="Common: $102.6M"></rect>
+          <rect class="bar-hit" x="567.75" y="16" width="77.5" height="252" data-px="606.5" data-py="84.46"  data-tip-key="$350M exit" data-tip-val="Common: $131.1M"></rect>
+          <rect class="bar-hit" x="645.25" y="16" width="77.5" height="252" data-px="684"   data-py="44.56"  data-tip-key="$400M exit" data-tip-val="Common: $159.6M"></rect>
+
+          <!-- hover dot -->
+          <circle class="hover-dot end-dot" cx="0" cy="0" r="4.5" style="opacity:0"></circle>
+        </svg>
+      </div>
+
+      <div class="figure__foot">
+        <details class="data-toggle">
+          <summary>View data</summary>
+          <div class="table-scroll">
+            <table class="data">
+              <caption class="visually-hidden">Proceeds to common across exit values</caption>
+              <thead>
+                <tr><th scope="col">Exit value</th><th scope="col" class="num">To preferred</th><th scope="col" class="num">To common</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>$0M</td><td class="num">$0</td><td class="num">$0</td></tr>
+                <tr><td>$50M</td><td class="num">$50.0M</td><td class="num">$0</td></tr>
+                <tr><td>$100M</td><td class="num">$100.0M</td><td class="num">$0</td></tr>
+                <tr><td>$120M</td><td class="num">$120.0M</td><td class="num">$0</td></tr>
+                <tr><td>$150M</td><td class="num">$132.9M</td><td class="num">$17.1M</td></tr>
+                <tr><td>$200M</td><td class="num">$154.4M</td><td class="num">$45.6M</td></tr>
+                <tr><td>$250M</td><td class="num">$175.9M</td><td class="num">$74.1M</td></tr>
+                <tr><td>$300M</td><td class="num">$197.4M</td><td class="num">$102.6M</td></tr>
+                <tr><td>$350M</td><td class="num">$218.9M</td><td class="num">$131.1M</td></tr>
+                <tr><td>$400M</td><td class="num">$240.4M</td><td class="num">$159.6M</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </figure>
+  </section>
+
+  <section class="section--surface">
+    <div class="wrap section">
+      <div style="max-width:56ch;margin-bottom:clamp(36px,4vw,52px)">
+        <h2 class="h2">What a scenario carries</h2>
+        <p class="prose" style="margin-top:18px">A scenario is not a copy of the spreadsheet. It is a set of overrides on the reconciled cap table, so the base never drifts and the diff is always readable.</p>
+      </div>
+      <div class="notes">
+          <article class="note reveal">
+            <h3>Term overrides</h3>
+            <p>Change a preference multiple, toggle participation, add a cap, or convert a class — one field at a time, each with its own audit line.</p>
+          </article>
+          <article class="note reveal">
+            <h3>Side-by-side diff</h3>
+            <p>Any two scenarios compare holder by holder. Rows that moved are flagged with the term that moved them, not just the delta.</p>
+          </article>
+          <article class="note reveal">
+            <h3>Signed statements</h3>
+            <p>Publish a scenario and each holder gets a statement they can verify independently — same math, same sources, no spreadsheet attached.</p>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="split split--sidebar">
+      <div>
+        <h2 class="h2">Built for the awkward questions</h2>
+        <p class="prose" style="margin-top:18px">The ones that arrive at 9pm the night before a board meeting, phrased as "what if."</p>
+      </div>
+      <div class="steps" style="grid-template-columns:1fr">
+        <article class="step reveal" style="border-right:0;border-top:1px solid var(--rule);padding:32px 0">
+          <h3 class="h3">"What if we take the bridge instead?"</h3>
+          <p>Model the note alongside the priced round. See where the discount and the cap actually bind, and what each does to the common pool at three exit values.</p>
+        </article>
+        <article class="step reveal" style="border-right:0;border-top:1px solid var(--rule);padding:32px 0">
+          <h3 class="h3">"Does the new pool come before or after?"</h3>
+          <p>Pre-money and post-money pool expansions are separate scenarios, not a footnote. The dilution lands on whoever the term says it lands on.</p>
+        </article>
+        <article class="step reveal" style="border-right:0;border-top:1px solid var(--rule);padding:32px 0">
+          <h3 class="h3">"Who is actually underwater at $90M?"</h3>
+          <p>Sweep the exit value and the answer comes back as a list of names and a break-even point — with the clause that produced each one attached.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="cta reveal">
+      <div>
+        <h2 class="h2 cta__title">Run your own numbers.</h2>
+        <p>Send us a term sheet and a cap table. We will come back with a reconciled model and three scenarios you did not ask for.</p>
+      </div>
+      <a class="btn" href="index.html#request">Request access <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <small>© <span data-year>2026</span> Equity Labs</small>
+    <nav aria-label="Footer">
+      <a href="#">Security</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

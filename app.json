@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Equity Labs",
+    "slug": "equity-labs",
+    "version": "1.0.0",
+    "scheme": "equitylabs",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.equitylabs.site"
+    },
+    "android": {
+      "package": "com.equitylabs.site",
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font",
+      "expo-splash-screen"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

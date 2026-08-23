@@ -643,6 +643,23 @@ def _require_reviewed_answer(callback_context):
     draft = state.get('final_draft')
     if draft:
         return types.Content(role='model', parts=[types.Part(text=str(draft))])
+
+    if analysts_ran:
+        # Research was done and reviewed, but no draft came back. The usual
+        # cause is root's own model turn returning finish_reason=STOP with no
+        # parts (MODEL_RETURNED_NO_CONTENT), which ends root's turn wherever
+        # it happens to be - so drafting_agent is never called and the user
+        # would otherwise receive a completely blank reply.
+        return types.Content(
+            role='model',
+            parts=[types.Part(text=(
+                'I got partway through this and the write-up step dropped '
+                'out, so I have no finished answer for you.\n\n'
+                'The research ran and was reviewed - only the drafting step '
+                'is missing, so nothing here is wrong, just incomplete. '
+                'Please re-run the request.'
+            ))],
+        )
     return None
 
 
@@ -675,7 +692,11 @@ root_agent = Agent(
         'proceed with whatever consensus_report you have. Skip this step '
         'entirely if you called no analyst agents.\n'
         '4. If you called any analyst agents, also call source_agent with '
-        "the brief's mandate to gather the sources backing them.\n"
+        "the brief's mandate to gather the sources backing them. "
+        'source_agent does not depend on the analyst notes, so issue '
+        'this call in the same turn as the step-2 analyst calls '
+        'whenever you can - fewer sequential turns means fewer chances '
+        'for the run to be cut short.\n'
         '5. Call drafting_agent, passing along the user message and the '
         'source list, to produce a draft reply. You do not need to pass '
         'along analyst notes, the consensus_report or the brief '
